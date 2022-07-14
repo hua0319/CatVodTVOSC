@@ -31,7 +31,7 @@ public class RoundTransformation implements Transformation {
     private int mRoundType = RoundType.NONE;
     private int diameter;
     private int radius;
-    private boolean isCenterCorp = false;//垂直方向不是中间裁剪，就是顶部
+    private boolean isCenterCorp = true;//垂直方向不是中间裁剪，就是顶部
     private String key = "";
 
     public RoundTransformation(String key) {
