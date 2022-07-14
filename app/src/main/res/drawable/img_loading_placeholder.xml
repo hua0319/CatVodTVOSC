@@ -9,7 +9,7 @@
     <item>
         <bitmap
             android:antialias="true"
-            android:gravity="center"
+            android:gravity="fitCenter"
             android:src="@drawable/icon_img_placeholder" />
     </item>
 </layer-list>
