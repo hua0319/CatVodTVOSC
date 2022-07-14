@@ -1,4 +1,5 @@
 package com.github.tvbox.osc.picasso;
+
 import android.graphics.Bitmap;
 import android.graphics.BitmapShader;
 import android.graphics.Canvas;
@@ -8,8 +9,11 @@ import android.graphics.PaintFlagsDrawFilter;
 import android.graphics.Path;
 import android.graphics.RectF;
 import android.graphics.Shader;
+
 import androidx.annotation.IntDef;
+
 import com.squareup.picasso.Transformation;
+
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -27,7 +31,7 @@ public class RoundTransformation implements Transformation {
     private int mRoundType = RoundType.NONE;
     private int diameter;
     private int radius;
-    private boolean isCenterCrop = true;//垂直方向不是中间裁剪，就是顶部
+    private boolean isCenterCorp = true;//垂直方向不是中间裁剪，就是顶部
     private String key = "";
 
     public RoundTransformation(String key) {
@@ -40,8 +44,8 @@ public class RoundTransformation implements Transformation {
         return this;
     }
 
-    public RoundTransformation centerCrop(boolean centerCrop) {
-        this.isCenterCrop = centerCrop;
+    public RoundTransformation centerCorp(boolean centerCorp) {
+        this.isCenterCorp = centerCorp;
         return this;
     }
 
@@ -159,7 +163,7 @@ public class RoundTransformation implements Transformation {
                 } else {
                     if (viewWidth == width && viewHeight != height) {
                         float dis = (height - viewHeight) / 2f;
-                        if (isCenterCrop) {
+                        if (isCenterCorp) {
                             mCanvas.translate(0, -dis);
                             mCanvas.drawRect(new RectF(0, dis, viewWidth, viewHeight + dis), mPaint);
                         } else {
@@ -178,7 +182,7 @@ public class RoundTransformation implements Transformation {
                     drawBottomLabel(mCanvas, mPaint, 0, 0, viewWidth, viewHeight);
                 } else if (viewWidth == width && viewHeight != height) {
                     float dis = (height - viewHeight) / 2f;
-                    if (isCenterCrop) {
+                    if (isCenterCorp) {
                         mCanvas.translate(0, -dis);
                         mCanvas.drawRoundRect(new RectF(0, dis, viewWidth, viewHeight + dis), radius, radius, mPaint);
                         drawBottomLabel(mCanvas, mPaint, 0, dis, viewWidth, viewHeight + dis);
@@ -199,7 +203,7 @@ public class RoundTransformation implements Transformation {
                     mCanvas.drawRect(new RectF(0, radius, viewWidth, viewHeight), mPaint);
                 } else if (viewWidth == width && viewHeight != height) {
                     float dis = (height - viewHeight) / 2f;
-                    if (isCenterCrop) {
+                    if (isCenterCorp) {
                         mCanvas.translate(0, -dis);
                         mCanvas.drawRoundRect(new RectF(0, dis, viewWidth, diameter + dis), radius, radius, mPaint);
                         mCanvas.drawRect(new RectF(0, dis + radius, viewWidth, viewHeight + dis), mPaint);
@@ -220,7 +224,7 @@ public class RoundTransformation implements Transformation {
                     mCanvas.drawRect(new RectF(0, 0, viewWidth - radius, viewHeight), mPaint);
                 } else if (viewWidth == width && viewHeight != height) {
                     float dis = (height - viewHeight) / 2f;
-                    if (isCenterCrop) {
+                    if (isCenterCorp) {
                         mCanvas.translate(0, -dis);
                         mCanvas.drawRoundRect(new RectF(viewWidth - diameter, dis, viewWidth, viewHeight + dis), radius, radius, mPaint);
                         mCanvas.drawRect(new RectF(0, dis, viewWidth - radius, viewHeight + dis), mPaint);
@@ -241,7 +245,7 @@ public class RoundTransformation implements Transformation {
                     mCanvas.drawRect(new RectF(0, 0, viewWidth, viewHeight - radius), mPaint);
                 } else if (viewWidth == width && viewHeight != height) {
                     float dis = (height - viewHeight) / 2f;
-                    if (isCenterCrop) {
+                    if (isCenterCorp) {
                         mCanvas.translate(0, -dis);
                         mCanvas.drawRoundRect(new RectF(0, viewHeight - diameter + dis, viewWidth, viewHeight + dis), radius, radius, mPaint);
                         mCanvas.drawRect(new RectF(0, dis, viewWidth, viewHeight - radius + dis), mPaint);
@@ -262,7 +266,7 @@ public class RoundTransformation implements Transformation {
                     mCanvas.drawRect(new RectF(radius, 0, viewWidth, viewHeight), mPaint);
                 } else if (viewWidth == width && viewHeight != height) {
                     float dis = (height - viewHeight) / 2f;
-                    if (isCenterCrop) {
+                    if (isCenterCorp) {
                         mCanvas.translate(0, -dis);
                         mCanvas.drawRoundRect(new RectF(0, dis, diameter, viewHeight + dis), radius, radius, mPaint);
                         mCanvas.drawRect(new RectF(radius, dis, viewWidth, viewHeight + dis), mPaint);
@@ -284,7 +288,7 @@ public class RoundTransformation implements Transformation {
                     mCanvas.drawRect(new RectF(0, radius, viewWidth, viewHeight), mPaint);
                 } else if (viewWidth == width && viewHeight != height) {
                     float dis = (height - viewHeight) / 2f;
-                    if (isCenterCrop) {
+                    if (isCenterCorp) {
                         mCanvas.translate(0, -dis);
                         mCanvas.drawRoundRect(new RectF(0, dis, diameter, diameter + dis), radius, radius, mPaint);
                         mCanvas.drawRect(new RectF(radius, dis, viewWidth, radius + dis), mPaint);
@@ -309,7 +313,7 @@ public class RoundTransformation implements Transformation {
                     mCanvas.drawRect(new RectF(radius, viewHeight - radius, viewWidth, viewHeight), mPaint);
                 } else if (viewWidth == width && viewHeight != height) {
                     float dis = (height - viewHeight) / 2f;
-                    if (isCenterCrop) {
+                    if (isCenterCorp) {
                         mCanvas.translate(0, -dis);
                         mCanvas.drawRoundRect(new RectF(0, viewHeight - diameter + dis, diameter, viewHeight + dis), radius, radius, mPaint);
                         mCanvas.drawRect(new RectF(0, dis, viewWidth, viewHeight - radius + dis), mPaint);
@@ -334,7 +338,7 @@ public class RoundTransformation implements Transformation {
                     mCanvas.drawRect(new RectF(0, radius, viewWidth, viewHeight), mPaint);
                 } else if (viewWidth == width && viewHeight != height) {
                     float dis = (height - viewHeight) / 2f;
-                    if (isCenterCrop) {
+                    if (isCenterCorp) {
                         mCanvas.translate(0, -dis);
                         mCanvas.drawRoundRect(new RectF(viewWidth - diameter, dis, viewWidth, diameter + dis), radius, radius, mPaint);
                         mCanvas.drawRect(new RectF(0, dis, viewWidth - radius, radius + dis), mPaint);
@@ -359,7 +363,7 @@ public class RoundTransformation implements Transformation {
                     mCanvas.drawRect(new RectF(0, viewHeight - radius, viewWidth - radius, viewHeight), mPaint);
                 } else if (viewWidth == width && viewHeight != height) {
                     float dis = (height - viewHeight) / 2f;
-                    if (isCenterCrop) {
+                    if (isCenterCorp) {
                         mCanvas.translate(0, -dis);
                         mCanvas.drawRoundRect(new RectF(viewWidth - diameter, viewHeight - diameter + dis, viewWidth, viewHeight + dis), radius, radius, mPaint);
                         mCanvas.drawRect(new RectF(0, dis, viewWidth, viewHeight - radius + dis), mPaint);
