@@ -75,14 +75,15 @@ public class RoundTransformation implements Transformation {
             //是否以宽计算
             float scale;
             if (width * 1f / viewWidth > height * 1f / viewHeight) {
-                scale = viewHeight * 1f / height;
-                width = (int) (width * scale);
+                //scale = viewHeight * 1f / height;
+                //width = (int) (width * scale);
                 height = viewHeight;
+                width = viewWidth;
             } else {
-                scale = viewWidth * 1f / width;
-                height = (int) (height * scale);
-                //width = viewWidth;
-                width = (int) (width * scale);
+                //scale = viewWidth * 1f / width;
+                //height = (int) (height * scale);
+                height = viewHeight;
+                width = viewWidth;
             }
             Matrix matrix = new Matrix();
             matrix.postScale(scale, scale);
