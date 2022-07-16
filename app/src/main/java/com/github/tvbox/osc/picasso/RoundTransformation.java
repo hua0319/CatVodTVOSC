@@ -81,7 +81,8 @@ public class RoundTransformation implements Transformation {
             } else {
                 scale = viewWidth * 1f / width;
                 height = (int) (height * scale);
-                width = viewWidth;
+                //width = viewWidth;
+                width = (int) (width * scale);
             }
             Matrix matrix = new Matrix();
             matrix.postScale(scale, scale);
