@@ -74,7 +74,7 @@ public class RoundTransformation implements Transformation {
         if (viewWidth != width || viewHeight != height) {
             //是否以宽计算
             float scale;
-            if (width * 0.5f / viewWidth > height * 0.5f / viewHeight) {
+            if (width * 0.5f / viewWidth > height * 1f / viewHeight) {
             //if (width * 1f / viewWidth > height * 1f / viewHeight) {
                 scale = viewHeight * 0.5f / height;
                 //scale = viewHeight * 1f / height;
