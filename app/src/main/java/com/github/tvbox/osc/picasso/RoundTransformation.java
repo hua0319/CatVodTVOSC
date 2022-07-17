@@ -75,13 +75,13 @@ public class RoundTransformation implements Transformation {
             //是否以宽计算
             float scale;
             if (width * 0.5f / viewWidth > height * 1f / viewHeight) {
-            //if (width * 1f / viewWidth > height * 1f / viewHeight) {                
-                scale = viewHeight * 1f / height;
+            //if (width * 1f / viewWidth > height * 1f / viewHeight) {
+                scale = viewHeight * 0.25f / height;
+                //scale = viewHeight * 1f / height;
                 width = (int) (width * scale);
                 height = viewHeight;
             } else {
-                scale = viewWidth * 0.5f / width;
-                //scale = viewWidth * 1f / width;
+                scale = viewWidth * 1f / width;
                 height = (int) (height * scale);
                 width = viewWidth;
             }
