@@ -8,7 +8,7 @@
 
     <FrameLayout
         android:layout_width="@dimen/vs_240"
-        android:layout_height="@dimen/vs_160">
+        android:layout_height="@dimen/vs_320">
 
         <ImageView
             android:id="@+id/ivThumb"
