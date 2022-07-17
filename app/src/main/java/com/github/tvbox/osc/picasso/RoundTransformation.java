@@ -77,7 +77,7 @@ public class RoundTransformation implements Transformation {
             if (width * 1f / viewWidth > height * 1f / viewHeight) {
                 //scale = viewHeight * 0.5f / height;
                 scale = viewHeight * 1f / height;
-                width = (int) (viewWidth * scale);
+                width = (int) (width * 1f * scale);
                 //width = (int) (width * scale);                
                 height = viewHeight;
             } else {
