@@ -91,7 +91,7 @@ public class RoundTransformation implements Transformation {
             mBitmapShader.setLocalMatrix(matrix); // 设置Shader的变换矩阵
         }
         Bitmap bitmap = Bitmap.createBitmap(viewWidth, viewHeight, Bitmap.Config.ARGB_8888);
-        bitmap.setHasAlpha(true);
+        bitmap.setHasAlpha(true);  //設置所有的像素爲透明
         Canvas mCanvas = new Canvas(bitmap);
         mPaint.setShader(mBitmapShader);
         // mPaint.setAntiAlias(true);
