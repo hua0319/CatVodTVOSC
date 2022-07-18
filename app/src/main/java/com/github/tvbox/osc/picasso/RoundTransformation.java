@@ -86,7 +86,7 @@ public class RoundTransformation implements Transformation {
                 width = viewWidth;
             }
             Matrix matrix = new Matrix();
-            matrix.setScale(scale, scale); //将图片宽高等比例缩放，避免拉伸
+            matrix.setTranslate(scale, scale); //将图片宽高等比例缩放平移，避免拉伸
             //matrix.postScale(scale, scale);
             mBitmapShader.setLocalMatrix(matrix); // 设置Shader的变换矩阵
         }
