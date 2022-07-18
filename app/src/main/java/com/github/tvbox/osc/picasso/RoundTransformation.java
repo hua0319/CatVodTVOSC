@@ -99,7 +99,7 @@ public class RoundTransformation implements Transformation {
         source.recycle();
         return bitmap;
     }
-
+    //圖形四個角都是圓的
     static Path RoundedRect(float left, float top, float right, float bottom, float rx, float ry, boolean tl, boolean tr, boolean br, boolean bl) {
         Path path = new Path();
         if (rx < 0) rx = 0;
